@@ -1,6 +1,8 @@
 // Import necessary functions and modules from the @reduxjs/toolkit and redux-persist packages.
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import userReducer from "./user/userSlice"; // Import the user reducer from a local file.
+import userReducer from "./user/userSlice";
+import themeReducer from "./theme/themeSlice";
+// Import the user reducer from a local file.
 import { persistReducer, persistStore } from "redux-persist";
 import storage from "redux-persist/lib/storage"; // Import the default storage engine for redux-persist (local storage).
 
@@ -8,6 +10,7 @@ import storage from "redux-persist/lib/storage"; // Import the default storage e
 const rootReducer = combineReducers({
   // Add the user reducer under the key "user".
   user: userReducer,
+  theme: themeReducer,
 });
 
 // Define a persist configuration for the root reducer.
